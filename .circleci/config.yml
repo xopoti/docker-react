@@ -20,6 +20,9 @@ jobs:
   frontend:
     docker:
       - image: xopoti/docker-react
+        auth:
+          username: xopoti
+          password: Ripe-plutonium-Hear2
     steps:
       - checkout
       - run:

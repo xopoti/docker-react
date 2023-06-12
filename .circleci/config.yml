@@ -24,10 +24,10 @@ jobs:
           username: xopoti
           password: $DOCKERHUB_PASSWORD
     steps:
-      -checkout
-      -run:
-        name: "Say Ollebolle"
-        command: "echo Kalleballe"
+      - checkout
+      - run:
+          name: "Say Ollebolle"
+          command: "echo Kalleballe"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows

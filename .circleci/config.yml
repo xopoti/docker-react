@@ -20,9 +20,6 @@ jobs:
   frontend:
     docker:
       - image: xopoti/docker-react
-        auth:
-          username: xopoti
-          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run:

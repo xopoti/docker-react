@@ -17,14 +17,16 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  front-end-start-docker:
+  front-end-start-docker-build:
+    working_directory: /app
     docker:
-      - image: cimg/base:stable
+      - image: docker:17.05.0-ce-git
     steps:
-      - checkout
       - run:
-          name: "Start docker"
-          command: sudo service docker start
+          name: Build application Docker image
+          command: |
+            cd frontend
+            docker build -t xopoti/docker-react -f Dockerfile.dev .
   front-end-start-test:
     docker:
       - image: cimg/base:stable
@@ -40,5 +42,5 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - front-end-start-docker
+      - front-end-start-docker-build
       - front-end-start-test

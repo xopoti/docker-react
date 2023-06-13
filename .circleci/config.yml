@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run:
           name: "Start docker"
-          command: sudo systemctl start docker
+          command: sudo service docker start
   front-end-start-test:
     docker:
       - image: cimg/base:stable

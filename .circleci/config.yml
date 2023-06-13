@@ -18,13 +18,14 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
   front-end-start-docker-build:
-    working_directory: /usr/app
+    # working_directory: /app
     docker:
       - image: cimg/base:2022.06
     steps:
+      - checkout
       - setup_remote_docker:
           version: 20.10.14
-      - checkout
+          docker_layer_caching: true
       - run:
           name: Build application Docker image
           command: |

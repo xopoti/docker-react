@@ -27,6 +27,7 @@ jobs:
           command: |
             cd frontend
             docker build -t xopoti/docker-react -f Dockerfile.dev .
+# Some comment
   front-end-start-test:
     docker:
       - image: cimg/base:stable

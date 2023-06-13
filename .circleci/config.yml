@@ -19,7 +19,7 @@ jobs:
           command: "echo Hello, World!"
   frontend:
     docker:
-      - image: cimg/base:stable
+      - image: node:16-alpine
     steps:
       - checkout
       - run:
@@ -31,5 +31,4 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
       - frontend

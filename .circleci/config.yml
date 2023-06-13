@@ -25,6 +25,8 @@ jobs:
       - run:
           name: Build application Docker image
           command: |
+            pwd
+            ls -la
             cd frontend
             docker build -t xopoti/docker-react -f Dockerfile.dev .
 # Some comment

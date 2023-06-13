@@ -22,6 +22,7 @@ jobs:
     docker:
       - image: node:16-alpine
     steps:
+      - checkout
       - run:
           name: Build application Docker image
           command: |

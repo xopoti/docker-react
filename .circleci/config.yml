@@ -27,7 +27,7 @@ jobs:
           command: |
             pwd
             ls -la
-            cd frontend
+            cd ./frontend
             docker build -t TESTME -f Dockerfile.dev .
 
 # Orchestrate jobs using workflows

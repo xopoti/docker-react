@@ -17,16 +17,22 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  front-end:
+  front-end-start-docker:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
       - run:
-          name: "Say Ollebolle"
+          name: "Start docker"
+          command: sudo systemctl start docker
+  front-end-start-test:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Start test"
           command: |
-            pwd
-            ls -la
             cd ./frontend
             docker build -t xopoti/docker-react -f Dockerfile.dev .
 # Orchestrate jobs using workflows
@@ -34,4 +40,5 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - front-end
+      - front-end-start-docker
+      - front-end-start-test

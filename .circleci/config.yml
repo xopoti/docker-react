@@ -18,7 +18,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
   front-end-start-docker-build:
-    working_directory: /app
+    working_directory: /usr/app
     docker:
       - image: cimg/base:2022.06
     steps:

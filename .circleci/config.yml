@@ -17,7 +17,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  frontend:
+  front-end:
     docker:
       - image: cimg/base:stable
     steps:
@@ -35,4 +35,4 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - frontend
+      - front-end

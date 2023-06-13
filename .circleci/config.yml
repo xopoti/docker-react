@@ -28,7 +28,7 @@ jobs:
             pwd
             ls -la
             cd ./frontend
-            docker build -t TESTME -f Dockerfile.dev .
+            docker build -t xopoti/docker-react -f Dockerfile.dev .
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows

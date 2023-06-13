@@ -19,10 +19,7 @@ jobs:
           command: "echo Hello, World!"
   frontend:
     docker:
-      - image: docker-react
-        auth:
-          username: xopoti
-          password: Ripe-plutonium-Hear2
+      - image: cimg/base:stable
     steps:
       - checkout
       - run:
@@ -30,7 +27,8 @@ jobs:
           command: |
             pwd
             ls -la
-            which docker
+            cd frontend
+            docker build -t TESTME -f Dockerfile.dev .
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows

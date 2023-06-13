@@ -20,7 +20,7 @@ jobs:
   front-end-start-docker-build:
     working_directory: /app
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: node:16-alpine
     steps:
       - run:
           name: Build application Docker image

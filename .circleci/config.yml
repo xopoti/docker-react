@@ -19,7 +19,8 @@ jobs:
           command: "echo Hello, World!"
   frontend:
     docker:
-      - image: node:16-alpine
+      - image: xopoti/docker-react
+      # - image: node:16-alpine
     steps:
       - checkout
       - run:
